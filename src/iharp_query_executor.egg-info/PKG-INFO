@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: iharp_query_executor
+Version: 0.1.3
+Home-page: https://github.com/iharp3/iharp-python-library.git
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: jupyter
+Requires-Dist: xarray
+Requires-Dist: netcdf4
+Requires-Dist: h5py
+Requires-Dist: dask[complete]
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: plotly
+Requires-Dist: cdsapi
+Requires-Dist: shapely
+Requires-Dist: matplotlib
+Requires-Dist: geopandas
+Requires-Dist: requests
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
