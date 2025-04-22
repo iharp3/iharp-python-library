@@ -57,8 +57,8 @@ class GetRasterExecutor():
         if response.status_code == 201:
             binary_data = response.content
             ds = pickle.loads(binary_data)
-            print(">>> data is:", type(ds))
-            print(ds)
+            # print(">>> data is:", type(ds))
+            # print(ds)
             return ds
         else:
             print("Error:", response.status_code)

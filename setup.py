@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
-# with open('requirements.txt') as f:
-#     requirements = f.read()
+with open("README.md", "r") as f:
+    long_description = f.read()
 
 setup(
     name="iharp_query_executor",
-    version="0.1.7",
+    version="0.0.12",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
@@ -23,9 +23,9 @@ setup(
         "geopandas",
         "requests",
     ],
-    long_description=open("README.md").read(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/iharp3/iharp-python-library.git",
+    url="https://github.com/iharp3/iharp-python-library",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",  

@@ -150,8 +150,8 @@ class GeoJsonExecutor(GetRasterExecutor):
         # geometry = geojson_data["features"][0]["geometry"]
         # coords = self._extract_coordinates(geometry)
         # min_lon, min_lat, max_lon, max_lat = self._create_boudning_box(coords[0])
-        print(f"Longitude range: {min_lon} to {max_lon}")
-        print(f"Latitude range: {min_lat} to {max_lat}")
+        # print(f"Longitude range: {min_lon} to {max_lon}")
+        # print(f"Latitude range: {min_lat} to {max_lat}")
         raster = GetRasterExecutor(
             variable=self.variable,
             start_datetime=self.start_datetime,
