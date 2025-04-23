@@ -13,7 +13,6 @@ class GetTimeseriesExecutor():
             max_lat: float, 
             min_lon: float, 
             max_lon: float, 
-            spatial_resolution: float, 
             aggregation: str,
     ):
         
@@ -25,7 +24,6 @@ class GetTimeseriesExecutor():
         self.max_lat = max_lat
         self.min_lon = min_lon
         self.max_lon = max_lon
-        self.spatial_resolution = spatial_resolution
         self.aggregation = aggregation
 
     def execute(self):
@@ -34,11 +32,11 @@ class GetTimeseriesExecutor():
             "variable": self.variable,
             "startDateTime": self.start_datetime,
             "endDateTime": self.end_datetime,
+            "temporalResolution": self.temporal_resolution,
             "north": self.max_lat,
             "south": self.min_lat,
             "east": self.max_lon,
             "west": self.min_lon,
-            "spatialResolution": self.spatial_resolution,
             "aggregation": self.aggregation
         }
 
@@ -55,9 +53,10 @@ class GetTimeseriesExecutor():
         if response.status_code == 201:
             binary_data = response.content
             ds = pickle.loads(binary_data)
-            print(">>> data is:", type(ds))
-            print(ds)
+            # print(">>> data is:", type(ds))
+            # print(ds)
             return ds
         else:
             print("Error:", response.status_code)
+            print("Response content:", response.content)  # This will show the actual error message
             return None

@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="iharp_query_executor",
-    version="0.0.12",
+    version="0.1.0",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[

@@ -1,21 +1,23 @@
-import pickle
 import requests
 import json
+import pickle
 
-class GetTimeseriesExecutor():
+class GetFindTimeExecutor():
     def __init__(
-            self,
+            self, 
             variable: str, 
-            start_datetime: str, 
-            end_datetime: str, 
+            start_datetime: str,
+            end_datetime: str,
             temporal_resolution: str,
-            min_lat: float, 
-            max_lat: float, 
-            min_lon: float, 
-            max_lon: float, 
-            aggregation: str,
+            min_lat: float,
+            max_lat: float,
+            min_lon: float,
+            max_lon: float,
+            aggregation,
+            filter_predicate: str,
+            filter_value: float,
     ):
-        
+        #super().__init__()
         self.variable = variable
         self.start_datetime = start_datetime
         self.end_datetime = end_datetime
@@ -25,11 +27,14 @@ class GetTimeseriesExecutor():
         self.min_lon = min_lon
         self.max_lon = max_lon
         self.aggregation = aggregation
+        self.filter_predicate = filter_predicate
+        self.filter_value = filter_value
+      
 
     def execute(self):
         form_data = {
             "requestType": "",
-            "variable": self.variable,
+            "variable": self.variable,  
             "startDateTime": self.start_datetime,
             "endDateTime": self.end_datetime,
             "temporalResolution": self.temporal_resolution,
@@ -37,18 +42,20 @@ class GetTimeseriesExecutor():
             "south": self.min_lat,
             "east": self.max_lon,
             "west": self.min_lon,
-            "aggregation": self.aggregation
+            "aggregation": self.aggregation,
+            "filterPredicate": self.filter_predicate,
+            "filterValue": self.filter_value
         }
 
-        url = "https://iharpv-dev.cs.umn.edu/api/timeseries_library/"
-
-        response = requests.post(
-        url = url,
-        headers={"Content-Type": "application/json"},
-        data=json.dumps(form_data),
-        verify=False
-        )
+        url = "https://iharpv-dev.cs.umn.edu/api/findtime_library/"
     
+        response = requests.post(
+            url = url,
+            headers={"Content-Type": "application/json"},
+            data=json.dumps(form_data),
+            verify=False
+            )
+        
 
         if response.status_code == 201:
             binary_data = response.content
@@ -58,5 +65,4 @@ class GetTimeseriesExecutor():
             return ds
         else:
             print("Error:", response.status_code)
-            print("Response content:", response.content)  # This will show the actual error message
             return None

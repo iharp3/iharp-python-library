@@ -1,7 +1,10 @@
 README.md
 setup.py
 src/iharp_query_executor/__init__.py
+src/iharp_query_executor/get_find_area_api.py
+src/iharp_query_executor/get_find_time_api.py
 src/iharp_query_executor/get_geojson_executor.py
+src/iharp_query_executor/get_heatmap_api.py
 src/iharp_query_executor/get_raster_api.py
 src/iharp_query_executor/get_timeseries_api.py
 src/iharp_query_executor.egg-info/PKG-INFO
