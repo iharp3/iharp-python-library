@@ -32,3 +32,4 @@ geojson = GeoJsonExecutor(
 )
 
 geojson.execute()
+geojson.visualize_mask()

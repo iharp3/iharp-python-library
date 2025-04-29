@@ -27,11 +27,12 @@
     from iharp_query_executor.get_find_area_api import GeoFindAreaExecutor
 
 
-# To use the executors:
 
-  Each function requires the variables shown inside the function to wy.
-ork properl
-  For GetRasterExecutor:
+  Each function requires the variables shown inside the function to work properly.
+
+# GetRasterExecutor:
+
+  Code for the GetRasterExecutor function:
 
     raster = GetRasterExecutor(
         variable=variable,
@@ -46,7 +47,15 @@ ork properl
         aggregation=aggregation,
     )
 
-  For GeoJsonExecutor:
+    To run the executor function:
+
+      raster.executr()
+
+# GeoJsonExecutor:
+  
+  The GeoJsonExecutor has an execute function like the rest but also a visualize function that will save a visualization of the data and masked data to a file called data_plot.png.
+
+  Code for the GeoJsonExecutor function:
 
     geojson = GeoJsonExecutor(
         variable=variable,
@@ -61,8 +70,15 @@ ork properl
         aggregation=aggregation,
         geojson_file=geojson_file
     )
+  
+  To run the executor and visualize function:
 
-  For GetTimeseriesExecutor:
+    geojson.execute()
+    geojson.visualize()
+
+# GetTimeseriesExecutor:
+
+  Code for the GetTimeseriesExecutor function:
 
     timeseries = GetTimeseriesExecutor(
         variable=variable,
@@ -76,8 +92,13 @@ ork properl
         aggregation=aggregation,
     )
     
+  To run the executor function:
 
-  For GetHeatMapExecutor:
+    timeseries.execute()
+
+# GetHeatMapExecutor:
+
+  Code for the GetHeatmapExecutor function:
 
     heatmap = GetHeatmapExecutor(
         variable=variable,
@@ -90,8 +111,15 @@ ork properl
         spatial_resolution=spatial_resolution,
         aggregation=aggregation,
     )
+  
+  To run the executor function:
 
-  For GetFindTimeExecutor:
+    heatmap.execute()
+
+
+# GetFindTimeExecutor:
+
+  Code for the GetFindTimeExecutor function:
     
     ft = GetFindTimeExecutor(
         variable=variable,
@@ -107,19 +135,29 @@ ork properl
         filter_value=filter_value
     )
 
+  To run the executor function:
 
-For GetFindAreaExecutor:
+    ft.execute()
 
-  fa = GetFindAreaExecutor(
-      variable=variable,
-      start_datetime=start_datetime,
-      end_datetime=end_datetime,
-      min_lat=min_lat,
-      max_lat=max_lat,
-      min_lon=min_lon,
-      max_lon=max_lon,
-      spatial_resolution=spatial_resolution,
-      aggregation=aggregation,
-      filter_predicate=filter_predicate,
-      filter_value=filter_value
-  )
+
+# GetFindAreaExecutor:
+
+  Code for the GetFindAreaExecutor function:
+
+    fa = GetFindAreaExecutor(
+        variable=variable,
+        start_datetime=start_datetime,
+        end_datetime=end_datetime,
+        min_lat=min_lat,
+        max_lat=max_lat,
+        min_lon=min_lon,
+        max_lon=max_lon,
+        spatial_resolution=spatial_resolution,
+        aggregation=aggregation,
+        filter_predicate=filter_predicate,
+        filter_value=filter_value
+    )
+
+  To run the executor function:
+
+    fa.execute()

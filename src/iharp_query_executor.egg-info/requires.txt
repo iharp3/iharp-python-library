@@ -1,12 +1,5 @@
-jupyter
 xarray
-netcdf4
-h5py
-dask[complete]
-pandas
 numpy
-plotly
-cdsapi
 shapely
 matplotlib
 geopandas

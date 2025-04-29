@@ -5,23 +5,16 @@ with open("README.md", "r") as f:
 
 setup(
     name="iharp_query_executor",
-    version="0.1.0",
+    version="0.1.1",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
-        "jupyter",
         "xarray",
-        "netcdf4",
-        "h5py",
-        "dask[complete]",
-        "pandas",
         "numpy",
-        "plotly",
-        "cdsapi",
         "shapely",
         "matplotlib",
         "geopandas",
-        "requests",
+        "requests"
     ],
     long_description=long_description,
     long_description_content_type="text/markdown",
